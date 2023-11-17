@@ -1,27 +1,37 @@
-# MajesticAdmin-Free-Bootstrap-Admin-Template
+# Club Checkin
 
-Majestic Admin is a simple yet powerful free Bootstrap admin template that is built with the Bootstrap framework, SASS, jQuery, HTML5, and CSS. The spectacular design, user friendliness, and easy to customizability of Majestic Admin makes it suitable for building different types of admin websites. This well documented template has high responsiveness to make websites look great on both desktop and mobile devices.
+**Overview**<br />
+Club Checkin is a straightforward web application designed to streamline check-ins for club events or meetings. The application provides a user-friendly interface for users to reset their passwords. With its clean and trendy design featuring a light blue gradient background, Club Checkin is suitable for college or club websites.
 
-The wide array of useful Dashboard elements and other essential features available with this template will make the process of website creation and customization a lot simpler. The clean and well-written code of Majestic Admin Template is easy to comprehend even for beginners.
+**Features**<br />
+* Password Reset: Easily reset your password by providing your email address.
+* Stylish Design: Modern and stylish design with a light blue gradient background for a pleasant user experience.<br />
 
-Take a quick glance at the preview of Majestic Admin template [here](http://www.bootstrapdash.com/demo/majestic-free/template/index.html)
+**Usage**<br />
+* Open the index.html file in a web browser.
+* Enter your email address in the designated field.
+* Click on the "Reset Password" button to initiate the password reset process.
+* Optionally, use the "Back to Login" link to return to the login page.
 
-[![N|Solid](preview.png)](http://www.bootstrapdash.com/demo/majestic-free/template/index.html)
+**Customization**<br />
+Feel free to customize the application according to your preferences:
 
+* Colors: Adjust the color scheme in the CSS to match your club or organization's branding.
+* Text: Modify the text content to provide specific instructions or branding messages.
+* Images: Replace the background image with one that suits your theme.
 
-<h2>How to use </h2>
+**Contributing**<br />
+If you would like to contribute to the development of Club Checkin, please follow these steps:
 
-<ul>
-  <li>
-    Download or Clone the depositary
-  </li>
-  <li>
-    Open the file template/index.html in a browser to view the demo
-  </li>
-  <li>
-    Start editing the code as per your requirement
-  </li>
-  <li>
-    If you wish to customize the template, use the command 'npm install' to install the necessary dependencies. Refer <a href="http://www.bootstrapdash.com/demo/majestic-free/template/documentation/documentation.html">documentaion</a> for more details on customization.
-  </li>
-</ul>
+* Fork the repository.
+* Create a new branch for your feature or bug fix.
+* Make changes and commit them to your branch.
+* Create a pull request, explaining the changes you made.
+
+**License**<br />
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+**Acknowledgments**<br />
+The design of this application is inspired by modern web design trends. Special thanks to OpenAI for providing advanced language models that assist in the development of this project.
+Club Checkin
+
