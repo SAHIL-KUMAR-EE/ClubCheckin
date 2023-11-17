@@ -1,37 +1,60 @@
-body{
-    background:#D3D3D3;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #87CEEB, #00BFFF); /* Light Blue Gradient */
+    color: #001F3F; /* Dark Blue Text Color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-.forget-pwd > a{
-    color: #dc3545;
-    font-weight: 500;
+
+.reset-container {
+    background: whitesmoke;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Shifted down */
 }
-.forget-password .panel-default{
-    padding: 31%;
-    margin-top: -27%;
+
+.reset-container h2 {
+    margin-bottom: 20px;
+    color: #001F3F; /* Dark Blue Text Color */
 }
-.forget-password .panel-body{
-    padding: 15%;
-    margin-bottom: -50%;
-    background: #fff;
+
+.reset-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: 1px solid #001F3F; /* Dark Blue Border */
     border-radius: 5px;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: transparent;
+    color: #001F3F; /* Dark Blue Text Color */
 }
-img{
-    width:40%;
-    margin-bottom:10%;
+
+.reset-button {
+    width: 50%; /* Centered Reset Password Button */
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background: #4b6cb7; /* Blue Background */
+    color: #fff;
+    cursor: pointer;
 }
-.btnForget{
-    background: #c0392b;
-    border:none;
+
+.reset-button:hover {
+    background: #364d8c; /* Darker Blue on Hover */
 }
-.forget-password .dropdown{
-    width: 100%;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-}
-.forget-password .dropdown button{
-    width: 100%;
-}
-.forget-password .dropdown ul{
-    width: 100%;
+
+.back-to-login {
+    margin-top: 20px;
+    color: #001F3F; /* Dark Blue Text Color */
+    text-decoration: none;
+    display: inline-block;
 }

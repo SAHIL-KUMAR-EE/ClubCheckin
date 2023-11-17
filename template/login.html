@@ -27,23 +27,44 @@
 	<link rel="stylesheet" type="text/css" href="login-page/css/main.css">
 <!--===============================================================================================-->
 
-	<script>
-		function validateEmail() {
-			// Get the email input value
-			var email = document.getElementById("email").value;
+	
+<script>
+	function validateEmail() {
+		// Get the email input value
+		var email = document.getElementById("email").value;
 
-			// Check if the email ends with "@pec.edu.in"
-			if (email.endsWith("@pec.edu.in")) {
-				// Redirect to another page with a welcome alert
-				alert("Welcome!");
-				window.location.href = "dashboard.html";
-				// You can use window.location.href to redirect to another page
-				// window.location.href = "another-page.html";
-			} else {
-				// Display an alert for invalid ID
-				alert("Invalid ID");
-			}
+		if ((email.endsWith("director@pec.edu.in")) || (email.endsWith("faculty@pec.edu.in"))){
+			// Redirect to another page with a welcome alert
+			alert("Welcome Faculty");
+			window.location.href = "faculty.html";
 		}
+		// Check if the email ends with "@pec.edu.in"
+		else if (email.endsWith("@pec.edu.in")) {
+			// Redirect to another page with a welcome alert
+			alert("Welcome Student");
+			window.location.href = "dashboard.html";
+			// You can use window.location.href to redirect to another page
+			// window.location.href = "another-page.html";
+		} 
+		
+		else {
+			// Display an alert for invalid ID
+			alert("Invalid Email ID");
+		}
+	}
+
+	function popOut() {
+		var email = document.getElementById("email").value;
+
+		if (email.endsWith("@pec.edu.in" || "faculty@pec.edu.in")) {
+			alert("Mail Sent");
+		}
+		
+		else {
+			alert("Invalid Email ID");
+		}
+	}
+
 
         function signup() {
             const name = document.getElementById('name').value;
@@ -121,7 +142,7 @@
                     <!-- Add Signup button -->
                     <div class="container-login100-form-btn">
                         <a class="login100-form-btn" onclick="validateEmail()">Login</a>
-                        <a class="login100-form-btn" onclick="signup()">Signup</a>
+                       
                     </div>
 					
 				</form>

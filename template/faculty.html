@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="background-color: #94C2F9; height: 100vh;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-wrap">
+            <div class="container">
+              <h1>Event Permissions</h1>
+  
+              <table class="table table-striped" id="clubDataTable">
+                <thead>
+                  <tr>
+                    <th>Serial Number</th>
+                    <th>Time</th>
+                    <th>Club</th>
+                    <th>Email</th>
+                    <th>Title</th>
+                    <th>Message</th>
+                    <th>Deny</th>
+                    <th>Grant</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Function to format timestamp to "MMM DD YYYY h:mm A"
+function formatTimestamp(timestamp) {
+  const date = new Date(timestamp);
+  const options = {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+  };
+  return new Intl.DateTimeFormat('en-US', options).format(date);
+}
+
+// Function to handle delete button click
+function handleDeleteButtonClick(rowId) {
+  // Confirm with the user before proceeding with deletion
+  if (confirm(`Are you sure you want to deny access?`)) {
+      // Implement the delete logic here
+      fetch(`https://x8ki-letl-twmt.n7.xano.io/api:oYOcubk6/popup_response/${rowId}`, {
+          method: 'DELETE',
+      })
+      .then(response => {
+          if (response.ok) {
+              alert('Event Access Denied');
+              // You may want to reload the table or update the UI accordingly
+              // For simplicity, I'm reloading the entire page in this example
+              location.reload();
+          } else {
+              alert('Deny Unsuccessful');
+          }
+      })
+      .catch(error => {
+          console.error('Error denying access:', error);
+          alert('Deny Unsuccessful');
+      });
+  }
+}
+
+function handleProgressButtonClick(rowId) {
+
+    if (confirm(`Are you sure you want to grant access?`)) {
+    
+        alert('Event Access Granted');
+        location.reload();
+    }
+    
+    else {
+        alert('Grant Unsuccessful');
+    }
+  }
+
+// Fetch data from Xano API
+fetch('https://x8ki-letl-twmt.n7.xano.io/api:oYOcubk6/popup_response')
+  .then(response => response.json())
+  .then(data => {
+      if (data.length > 0) {
+          // Get keys from the first object in the array
+          const keys = Object.keys(data[0]);
+
+          // Create table rows
+          const tableBody = document.getElementById('tableBody');
+          data.forEach((row, rowIndex) => {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `<td>${rowIndex + 1}</td>`;
+
+              keys.forEach((key, index) => {
+                  if (key !== 'id') {  // Skip iteration for 'id' field
+                      const td = document.createElement('td');
+                      // Format timestamp if the key is 'created_at'
+                      td.textContent = key === 'created_at' ? formatTimestamp(row[key]) : row[key];
+                      tr.appendChild(td);
+                  }
+              });
+
+              // Add a delete button for the last column
+              const deleteButton = document.createElement('b');
+              deleteButton.className = 'btn btn-danger';
+              deleteButton.textContent = 'Deny';
+              // Attach the click event listener
+              deleteButton.addEventListener('click', () => handleDeleteButtonClick(row['id'])); // Assuming there's an 'id' field
+              const deleteColumn = document.createElement('td');
+              deleteColumn.appendChild(deleteButton);
+              tr.appendChild(deleteColumn);
+
+              // Add a Progress button based on your criteria (assuming a non-empty 'title' field)
+              const progressButton = document.createElement('td');
+              // Attach the click event listener
+              progressButton.addEventListener('click', () => handleProgressButtonClick(row['id'])); // Assuming there's an 'id' field
+              if (row['title']) {
+                  const button = document.createElement('a');
+                  button.href = '#';
+                  button.className = 'btn btn-success';
+                  button.textContent = 'Grant';
+                  progressButton.appendChild(button);
+              } else {
+                  progressButton.textContent = '-';
+              }
+
+              tr.appendChild(progressButton);
+              tableBody.appendChild(tr);
+          });
+      } else {
+          console.error('No data available');
+      }
+  })
+  .catch(error => {
+      console.error('Error fetching data:', error);
+  });
+</script>
+          </div>
+          </div>
+          </div>
+        
+      </div>
+      
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    
+    <!-- partial -->
+  </div>
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="vendors/base/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="vendors/chart.js/Chart.min.js"></script>
+<script src="vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/template.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/dashboard.js"></script>
+<script src="js/data-table.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/dataTables.bootstrap4.js"></script>
+<!-- End custom js for this page-->
+
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+
+<!-- <script>
+// Add an event listener to the button
+document.getElementById('saveChangesBtn').addEventListener('click', function() {
+    // Your fetch request
+    fetch('http://localhost:3000/your-endpoint', {
+        method: 'POST', // or 'GET' or any other HTTP method
+        headers: {
+            'Content-Type': 'application/json', // adjust the content type based on your server
+            // Add any other headers if needed
+        },
+        body: JSON.stringify({
+            // Your data to send to the server
+            key1: 'value1',
+            key2: 'value2',
+            // ... add more key-value pairs as needed
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle the response from the server
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+</script> -->
+
+<script>
+document.getElementById('saveChangesBtn').addEventListener('click', function () {
+  const clubSelect = document.getElementById('clubSelect');
+  const titleInput = document.getElementById('titleInput');
+  const messageInput = document.getElementById('messageInput');
+
+  const club = clubSelect.value;
+  const title = titleInput.value;
+  const message = messageInput.value;
+  const email = emailInput.value;
+
+  const popupData = {
+      club: club,
+      email: email,
+      title: title,
+      message: message
+  };
+
+  fetch('https://x8ki-letl-twmt.n7.xano.io/api:oYOcubk6/popup_response', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          // Add any additional headers as needed
+      },
+      body: JSON.stringify(popupData),
+  })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          alert('Changes saved successfully!');
+          // Close the modal
+          document.getElementById('closebutton2').click();
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('Error saving changes.');
+      });
+});
+</script>
+
+
+
+
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+</body>
+</html>

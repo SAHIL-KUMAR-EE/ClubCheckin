@@ -88,3 +88,12 @@ function saveChanges() {
         console.error('Error:', error);
     });
 }
+function popOut() {
+    var email = document.getElementById("email").value;
+
+    if (email.endsWith("@pec.edu.in")) {
+        alert("Mail Sent");
+    } else {
+        alert("Invalid Email ID");
+    }
+} // Missing closing bracket added here
