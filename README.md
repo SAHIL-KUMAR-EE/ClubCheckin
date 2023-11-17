@@ -1,37 +1,92 @@
+Certainly! Here's an updated version of the README.md with a "Live Demo" section and a placeholder link:
+
 # Club Checkin
 
-**Overview**<br />
-Club Checkin is a straightforward web application designed to streamline check-ins for club events or meetings. The application provides a user-friendly interface for users to reset their passwords. With its clean and trendy design featuring a light blue gradient background, Club Checkin is suitable for college or club websites.
+Welcome to Club Checkin, the ultimate solution for college clubs to streamline the process of seeking permission approvals for rooms required for various events and workshops.
 
-**Features**<br />
-* Password Reset: Easily reset your password by providing your email address.
-* Stylish Design: Modern and stylish design with a light blue gradient background for a pleasant user experience.<br />
 
-**Usage**<br />
-* Open the index.html file in a web browser.
-* Enter your email address in the designated field.
-* Click on the "Reset Password" button to initiate the password reset process.
-* Optionally, use the "Back to Login" link to return to the login page.
+## Live Demo
 
-**Customization**<br />
-Feel free to customize the application according to your preferences:
+Check out the live demo [here](https://your-live-demo-link.com).
 
-* Colors: Adjust the color scheme in the CSS to match your club or organization's branding.
-* Text: Modify the text content to provide specific instructions or branding messages.
-* Images: Replace the background image with one that suits your theme.
+## Table of Contents
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+  - [Code Contributions](#code-contributions)
+  - [Bug Reports and Feature Requests](#bug-reports-and-feature-requests)
+- [Live Demo](#live-demo)
+- [License](#license)
 
-**Contributing**<br />
-If you would like to contribute to the development of Club Checkin, please follow these steps:
+## Getting Started
 
-* Fork the repository.
-* Create a new branch for your feature or bug fix.
-* Make changes and commit them to your branch.
-* Create a pull request, explaining the changes you made.
+### Prerequisites
 
-**License**<br />
-This project is licensed under the MIT License - see the LICENSE file for details.
+Before you begin, ensure you have the following dependencies installed:
 
-**Acknowledgments**<br />
-The design of this application is inspired by modern web design trends. Special thanks to OpenAI for providing advanced language models that assist in the development of this project.
-Club Checkin
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [Xano account](https://xano.com/)
 
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/SAHIL-KUMAR-EE/ClubCheckin.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd club-checkin
+   ```
+
+3. Configure Xano backend:
+
+   - Create an account on [Xano](https://xano.com/).
+   - Set up your Xano project and obtain the API key.
+   - Update the `xano.js` file with your Xano project details and API key.
+
+## Usage
+
+- Navigate to the website and log in.
+- Explore the intuitive interface to create and manage events, workshops, and room permissions.
+- Submit permission requests effortlessly.
+
+## Contributing
+
+### Code Contributions
+
+1. Fork the repository and create a new branch:
+
+   ```bash
+   git checkout -b feature/new-feature
+   ```
+
+2. Make your changes and commit them:
+
+   ```bash
+   git commit -m "Add new feature"
+   ```
+
+3. Push to the branch:
+
+   ```bash
+   git push origin feature/new-feature
+   ```
+
+4. Open a pull request on GitHub.
+
+### Bug Reports and Feature Requests
+
+- Report bugs or suggest new features by opening an issue.
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Replace the placeholder link in the "Live Demo" section with the actual link to your live demo.
