@@ -7,7 +7,7 @@ Welcome to Club Checkin, the ultimate solution for college clubs to streamline t
 
 ## Live Demo
 
-Check out the live demo [here](https://your-live-demo-link.com).
+Check out the live demo [here](https://www.tinyurl.com/clubspec).
 
 ## Table of Contents
 - [Getting Started](#getting-started)
